@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><templates><template autoinsert="true" context="org.python.pydev.editor.templates.python" deleted="false" description="New Function" enabled="true" name="function">def sample(**kwargs):
+    """ Protects a field while still giving some usable information.
+
+        If the required arguements are not passed the function dies with a return failure and an exception.
+
+        Settings:
+        ---------
+        REQUIRED = list(['char','string','last'])
+            The required arguments
+            
+        MAX_PARAMS = 3
+            To avoid any unknow issue
+            # Consider checking input for length
+            # If SQL used protect against injection
+
+        Parameters:
+        ----------
+        protect_field : char, stringToProtect,last
+            Take a [stringToProtect] of any length and replace all of the characters with a [char]
+                except for the [last] number of characters
+
+        Raises:
+        ------
+        Exception
+            If required parameters are not passed or too many parameters are passed
+            
+        Returns:
+        --------
+            SUCCESS FLAG
+            Obfuscated String
+            
+        Example: 
+        --------
+        SUCCESS, ARGS = product(char='*',string='MyLittleSecretSentance',last=4)
+             
+    """
+
+    logger.debug('starting with paramters {0}'.format(kwargs))
+    
+    
+    REQUIRED = list(['sound','light'])
+    MAX_PARAMS = 4
+    SUCCESS = True
+    
+    # Check for requirement parameters
+    if DEBUG: print(REQUIRED,len(REQUIRED))
+    if DEBUG: print(kwargs,len(kwargs))
+    if len(kwargs) &gt;= len(REQUIRED) and len(kwargs) &lt;= MAX_PARAMS:
+        for required in REQUIRED:
+            if required not in kwargs:
+                SUCCESS = False
+                raise Exception("The parameter {0} is required".format(required))
+                
+    else:
+        SUCCESS = False
+        raise Exception('parameters required {0} parameters received {1}'.format(len(REQUIRED),len(kwargs)))
+        
+    if DEBUG: print('Success Flag, {0}, arguments {1}'.format(SUCCESS,kwargs))
+    ## Code to execute here
+    if SUCCESS:                    
+        
+        return SUCCESS
+    
+    else:
+        logger.error('Error in parameters')
+        return SUCCESS</template></templates>

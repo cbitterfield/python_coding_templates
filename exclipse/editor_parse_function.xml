@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><templates><template autoinsert="true" context="org.python.pydev.editor.templates.python" deleted="false" description="Add a line to the arg parser" enabled="true" name="parse">parser.add_argument('-s','--long',
+                    help = 'Help for this function',
+                    type=str,
+                    action = 'store',
+                    required = False,
+                    dest='(var_)', 
+                    choices=CHOICES,
+                    default=DEFAULT
+                    )</template></templates>
